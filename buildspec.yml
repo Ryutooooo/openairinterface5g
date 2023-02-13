@@ -9,10 +9,6 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker pull oaisoftwarealliance/oai-gnb:develop
-      - docker pull oaisoftwarealliance/oai-nr-ue:develop
-      - docker pull oaisoftwarealliance/oai-enb:develop
-      - docker pull oaisoftwarealliance/oai-lte-ue:develop
       - docker build --target ran-base --tag ran-base:latest --file docker/Dockerfile.base.ubuntu18 .
       - docker build --target ran-build --tag ran-build:latest --file docker/Dockerfile.build.ubuntu18 .
       - docker build --target oai-enb --tag oai-enb:latest --file docker/Dockerfile.eNB.ubuntu18 .
